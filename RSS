@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us"><title>Code Review - All issues</title><link href="https://codereview.chromium.org/" rel="alternate"></link><link href="https://codereview.chromium.org/rss/all" rel="self"></link><id>https://codereview.chromium.org/</id><updated>2016-08-24T00:19:53+00:00</updated><author><name>rietveld</name></author><entry><title>Instrument lease expirations and Pub/Sub message transmission
+</title><link href="https://codereview.chromium.org/2274573003/" rel="alternate"></link><updated>2016-08-24T00:19:53+00:00</updated><author><name>smut</name></author><id>urn:md5:66c8f45a3a88b176bf88b0ce85656e81</id><summary type="html">
+  Instrument lease expirations and Pub/Sub message transmission
+
+BUG=589215
+
+</summary></entry><entry><title>Palette tool laser prototype.
+</title><link href="https://codereview.chromium.org/2239743004/" rel="alternate"></link><updated>2016-08-24T00:19:47+00:00</updated><author><name>sammiequon</name></author><id>urn:md5:99cf94ba15bfd4e967a1739c3eec345f</id><summary type="html">
+  Palette tool laser prototype.
+
+Classes:
+LaserPointerMode - Serves as controller as receiver of events.
+LaserPointerPoints - Helper class that contains collections of the points.
+LaserPointerView - Responsible for rendering the point(s).
+
+Split of from 2231533004.
+
+TEST=./out/Release/ash_unittests --gtest_filter=LaserPointer*
+
+BUG=616143
+
+</summary></entry><entry><title>cc : Add OnTransformAnimated to transform tree
+</title><link href="https://codereview.chromium.org/2269143003/" rel="alternate"></link><updated>2016-08-24T00:19:40+00:00</updated><author><name>jaydasika</name></author><id>urn:md5:9698108c4635820dcedeee76cb715c85</id><summary type="html">
+  cc : Add OnTransformAnimated to transform tree
+
+And use it to update transform animations directly instead of routing
+the updates through layers. This CL also changes element_layers_maps to
+hold layer_id instead of layer so that we can get the property tree
+index for animation update without accessing LayerImpl
+
+BUG=638297
+CQ_INCLUDE_TRYBOTS=master.tryserver.blink:linux_precise_blink_rel
+
+</summary></entry><entry><title>Refactor LayerTreeSettings generation code.
+</title><link href="https://codereview.chromium.org/2268893005/" rel="alternate"></link><updated>2016-08-24T00:19:32+00:00</updated><author><name>xingliu</name></author><id>urn:md5:ea6a04dc3a2ee289c327126029380ce1</id><summary type="html">
+  Refactor LayerTreeSettings generation code.
+
+The goal for this CL is to make Blimp to generate LayerTreeSettings with
+the same code with Chrome.
+
+
+
+BUG=NONE
+
+</summary></entry><entry><title>Adding BlimpNavigationController to Tab
+</title><link href="https://codereview.chromium.org/2233023002/" rel="alternate"></link><updated>2016-08-24T00:19:31+00:00</updated><author><name>shaktisahu</name></author><id>urn:md5:581203976129835d6df1f894f4197b31</id><summary type="html">
+  Adding BlimpNavigationController to Tab
+
+Added blimp navigation controller to tab so that tab can route the
+navigation calls to the correct navigation controller depending on
+blimp mode. A TabObserver was created to be notified about the blimp
+navigation events. Also changed ToolbarModelImpl to reflect the
+correct url in blimp mode.
+
+Also moved the blimp client context delegate initialization to an
+early life cycle method in ChromeActivity.
+
+Added a method to get the Java object from native BlimpContents.
+
+BUG=611100
+
+</summary></entry><entry><title>Don&amp;#39;t fail on profile changes in GpuVideoDecoder.
+</title><link href="https://codereview.chromium.org/2273793002/" rel="alternate"></link><updated>2016-08-24T00:19:16+00:00</updated><author><name>DaleCurtis</name></author><id>urn:md5:a0d3b565074449bccf1d0c949e60df2a</id><summary type="html">
+  Don&amp;#39;t fail on profile changes in GpuVideoDecoder.
+
+This restriction is artificial; or at least I can&amp;#39;t make it fail
+when the profile changes. The hardware decoders I&amp;#39;ve tried (Android,
+Windows, Mac) don&amp;#39;t seem to care if the profile actually changes.
+
+In fact, MSE has always lied about the h264 profile (!), it always
+specifies H264PROFILE_MAIN regardless of the actual profile. The
+only parser sending this information correctly is the TS parser
+used by Chromecast -- which then hits this check.
+
+If the profile is actually unsupported we will still fail during
+the check of SupportedProfiles.
+
+BUG=640269
+TEST=http://storage.googleapis.com/dalecurtis/mse_profile_change.html
+
+</summary></entry><entry><title>Add unit test for UsbChooserController
+</title><link href="https://codereview.chromium.org/2269993004/" rel="alternate"></link><updated>2016-08-24T00:19:06+00:00</updated><author><name>juncai</name></author><id>urn:md5:e9cfdba2eff9e97be29ffe5731f0c981</id><summary type="html">
+  Add unit test for UsbChooserController
+
+This CL adds some unit tests for code that deals with displaying USB
+devices that have the same name on the chooser.
+
+BUG=637402
+
+</summary></entry><entry><title>Give precedence to trusty-updates in trusty sysroot
+</title><link href="https://codereview.chromium.org/2270253002/" rel="alternate"></link><updated>2016-08-24T00:19:02+00:00</updated><author><name>Tom Anderson</name></author><id>urn:md5:3049dfccc0cf45fabbc585eec68c589a</id><summary type="html">
+  Give precedence to trusty-updates in trusty sysroot
+
+Pull package lists from both trusty and trusty-updates, and give
+precedence to the packages in trusty-updates when deciding which
+packages to add to the sysroot.
+
+BUG=638394
+
+</summary></entry><entry><title>[libvpx] Do not attempt to convert empty list of ARM assembly files.
+</title><link href="https://codereview.chromium.org/2273963002/" rel="alternate"></link><updated>2016-08-24T00:18:59+00:00</updated><author><name>slan</name></author><id>urn:md5:40121ad32ccb97a1e47c535c52e77441</id><summary type="html">
+  [libvpx] Do not attempt to convert empty list of ARM assembly files.
+
+GN&amp;#39;s action_foreach template does not accept an empty source list as
+input. ARM builds that do not use NEON will pass the
+//third_party/libvpx:convert_arm_assembly target an empty list. Check
+that the list is not empty before declaring this target.
+
+BUG = internal b/30873074
+
+</summary></entry><entry><title>ash: Move alignment and autohide behavior from Shelf to WmShelf
+</title><link href="https://codereview.chromium.org/2272793005/" rel="alternate"></link><updated>2016-08-24T00:18:59+00:00</updated><author><name>James Cook</name></author><id>urn:md5:095976865a7687e6720be52e2ea50db5</id><summary type="html">
+  ash: Move alignment and autohide behavior from Shelf to WmShelf
+
+This is a step toward replacing Shelf with WmShelf, which has a more sensible
+lifetime. It does not change shelf behavior.
+
+* Migrate the various getters and setters.
+* Before the shelf is constructed (after login) default the alignment to
+bottom-locked. After construction default to bottom. This is weird, but matches
+what we had before.
+* Add Shelf::wm_shelf() and use it in pieces of code that we know we&amp;#39;ll have to
+refactor anyway (chrome, some ash/wm pieces we&amp;#39;re not converting).
+* Move ShelfView::OnShelfAlignmentChanged() call into ShelfWidget. In general
+I&amp;#39;m trying to reduce outside access into ShelfView.
+* Convert Shelf* to WmShelf* where possible in tests.
+* Make AshTestBase::GetPrimaryShelf() public so it can be used in test utility
+functions outside of test classes.
+
+BUG=615502
+TEST=ash_unittests, chrome unit_tests
+
+</summary></entry><entry><title>Update V8 to version 5.4.502.
+</title><link href="https://codereview.chromium.org/2269373002/" rel="alternate"></link><updated>2016-08-24T00:18:57+00:00</updated><author><name>v8-autoroll</name></author><id>urn:md5:aa1ef239a4d24ca98fe63eb1e80d957c</id><summary type="html">
+  Update V8 to version 5.4.502.
+
+Summary of changes available at:
+https://chromium.googlesource.com/v8/v8/+log/4fb8ad0d..8b742785
+
+Please follow these instructions for assigning/CC&amp;#39;ing issues:
+https://github.com/v8/v8/wiki/Triaging%20issues
+
+Please close rolling in case of a roll revert:
+https://v8-roll.appspot.com/
+This only works with a Google account.
+
+CQ_INCLUDE_TRYBOTS=master.tryserver.blink:linux_precise_blink_rel;master.tryserver.chromium.linux:linux_optional_gpu_tests_rel;master.tryserver.chromium.mac:mac_optional_gpu_tests_rel;master.tryserver.chromium.win:win_optional_gpu_tests_rel
+
+TBR=hablich@chromium.org,machenbach@chromium.org,littledan@chromium.org,vogelheim@chromium.org
+
+</summary></entry><entry><title>DevTools: Simplify DOMBreakpointsSidebarPane inspected URL
+</title><link href="https://codereview.chromium.org/2277543002/" rel="alternate"></link><updated>2016-08-24T00:18:52+00:00</updated><author><name>chenwilliam</name></author><id>urn:md5:38ee276b42554612fe47e517a9b48e79</id><summary type="html">
+  DevTools: Simplify DOMBreakpointsSidebarPane inspected URL
+
+Previously the restoreBreakpoints method implictly relied on the inspected URL being set
+to the current inspected URL. This CL simplifies the logic for setting the inspected URL
+and ensures that the inspected URL is always accurate in the process of restoring breakpoints.
+
+BUG=627296
+
+</summary></entry><entry><title>DevTools: Make sure TargetManager fires its own events.
+</title><link href="https://codereview.chromium.org/2273973002/" rel="alternate"></link><updated>2016-08-24T00:18:48+00:00</updated><author><name>alph</name></author><id>urn:md5:dc25626fc52da2a7cf2bf50596df0738</id><summary type="html">
+  DevTools: Make sure TargetManager fires its own events.
+
+</summary></entry><entry><title>DevTools: merge devtools target with devtools host, part 1
+</title><link href="https://codereview.chromium.org/2263843002/" rel="alternate"></link><updated>2016-08-24T00:18:47+00:00</updated><author><name>pfeldman</name></author><id>urn:md5:f2fb76d4ece43f84b6dd168d3e951829</id><summary type="html">
+  DevTools: merge devtools target with devtools host, part 1
+CQ_INCLUDE_TRYBOTS=master.tryserver.chromium.linux:closure_compilation
+
+</summary></entry><entry><title>Can&amp;#39;t take a screenshot on VMs.
+</title><link href="https://codereview.chromium.org/2250783004/" rel="alternate"></link><updated>2016-08-24T00:18:17+00:00</updated><author><name>achuithb</name></author><id>urn:md5:732e89bf0f4dd20c9b287c5194d24e84</id><summary type="html">
+  Can&amp;#39;t take a screenshot on VMs.
+
+BUG=chromium:609001
+
+</summary></entry><entry><title>Introduce ServiceWorker.EventDispatchingDelay UMA
+</title><link href="https://codereview.chromium.org/2218943002/" rel="alternate"></link><updated>2016-08-24T00:17:58+00:00</updated><author><name>horo</name></author><id>urn:md5:17b2204cdd659d0e688d45e5cd8b6ac9</id><summary type="html">
+  Introduce ServiceWorker.EventDispatchingDelay UMA
+
+This UMA records the time taken between sending an event IPC from
+the browser process to a Service Worker and executing the event
+handler in the Service Worker.
+
+This CL depends on https://codereview.chromium.org/2249063004/.
+
+BUG=561209
+
+</summary></entry><entry><title>DevTools: add Network.enable/disable handlers on the content side.
+</title><link href="https://codereview.chromium.org/2269343002/" rel="alternate"></link><updated>2016-08-24T00:17:45+00:00</updated><author><name>pfeldman</name></author><id>urn:md5:96f18130e2ce3b2bd96d5b5ff06ab7d9</id><summary type="html">
+  DevTools: add Network.enable/disable handlers on the content side.
+
+R=jam
+
+</summary></entry><entry><title>Desugar async/await to create the resulting Promise upfront
+</title><link href="https://codereview.chromium.org/2233923003/" rel="alternate"></link><updated>2016-08-24T00:17:41+00:00</updated><author><name>Dan Ehrenberg</name></author><id>urn:md5:5e0bd0b9e225c296080fdbd4cc2b04a9</id><summary type="html">
+  Desugar async/await to create the resulting Promise upfront
+
+As part of the work to implement catch prediction for async functions,
+the resulting Promise that is the output of the function needs to be
+available earlier for a couple reasons:
+- To be able to do %DebugPushPromise/%DebugPopPromise over the body
+  of the async function
+- To be able to pass the resulting promise into AsyncFunctionAwait
+  in order to set up the dependency chains
+
+This patch creates the Promise earlier and pushes it onto the debug
+stack; a later patch will set up the dependency chain. Although the
+debug stack is set up, it&amp;#39;s not anticipated that this will change
+the catch prediction helpfully yet, as everything will still likely
+be predicted as &amp;#39;caught&amp;#39; for now, as before.
+
+R=caitp@igalia.com,yangguo@chromium.org
+CC=neis@chromium.org,gsathya@chromium.org
+BUG=v8:5167
+
+</summary></entry><entry><title>ImageCapture: support exposure mode configuration
+</title><link href="https://codereview.chromium.org/2270563006/" rel="alternate"></link><updated>2016-08-24T00:17:32+00:00</updated><author><name>mcasas</name></author><id>urn:md5:aae24d6eeed4dfa8310846bf1d3c2b58</id><summary type="html">
+  ImageCapture: support exposure mode configuration
+
+wip
+
+BUG=368381,518807
+
+</summary></entry><entry><title>Add dart:js_util library and tests to ddc. This library is already added to dart2js and dartium.
+</title><link href="https://codereview.chromium.org/2269963005/" rel="alternate"></link><updated>2016-08-24T00:17:17+00:00</updated><author><name>Jacob</name></author><id>urn:md5:9ef8d196b6ff00af825156800032e7fa</id><summary type="html">
+  Add dart:js_util library and tests to ddc. This library is already added to dart2js and dartium.
+
+BUG=
+
+</summary></entry></feed>
